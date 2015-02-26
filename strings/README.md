@@ -1,1 +1,1 @@
-Reverese a string in log n time.
+1) Reverese a string in log n time.

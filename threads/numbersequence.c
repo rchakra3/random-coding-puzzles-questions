@@ -3,7 +3,6 @@
 #include<stdio.h>
 #include<sched.h>
 
-
 /*Simple program to print the sequence from 0-20 using two threads. Instead of using 2 built in mutexes, I've used a single global variable
 instead. If 0 prints an even number, if 1 prints an odd number,*/
 

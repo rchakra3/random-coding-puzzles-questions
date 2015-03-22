@@ -1,11 +1,5 @@
 #define STACK_SIZE 100
 
-typedef struct node{
-	int value;
-	struct node *left;
-	struct node *right;
-}Node;
-
 typedef struct stack{
 	int current_top;
 	Node * data[STACK_SIZE];

@@ -39,14 +39,39 @@ Node * initList()
 
 void printRevRecursive(Node *head)
 {
-	if(head->next==NULL)
+	if(head==NULL)
 	{
-		printf("%d\n", head->value);
 		return;
 	}
 
 	printRevRecursive(head->next);
-	printf("%d\n", head->value);
+	printf("%d ", head->value);
+}
+
+Node * reverseList(Node *head){
+
+	Node *prev=NULL;
+	Node *current=head;
+	Node *next;
+
+	while(current!=NULL){
+		next=current->next;
+		current->next=prev;
+		prev=current;
+		current=next;
+	}
+	return prev;
+}
+
+/* Function to print nodes in a given linked list */
+void printList(Node *node)
+{
+    while (node != NULL)
+    {
+        printf("%d ", node->value);
+        node = node->next;
+    }
+    printf("\n");
 }
 
 
@@ -56,4 +81,8 @@ int main(int argc, char *argv[])
 	head=initList();
 
 	printRevRecursive(head);
+	printf("\n");
+	head=reverseList(head);
+	printList(head);
+
 }

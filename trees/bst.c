@@ -25,6 +25,7 @@ void doubleTree(Node* node);
 Node *populateRoot2();
 int isBST(Node *root);
 
+
 int main(int argc,char *argv[])
 {
 	int opt,val;

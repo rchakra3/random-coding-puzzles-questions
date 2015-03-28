@@ -26,6 +26,10 @@ void stack_push(StackNode **head,int data){
 
 int stack_pop(StackNode **head){
 
+	if(*head==NULL){
+		return INT_MIN;
+	}
+
 	int data=(*head)->data;
 
 	StackNode *old_head=(*head);

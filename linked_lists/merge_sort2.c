@@ -8,11 +8,10 @@ typedef struct node
     struct node *next;
 }Node;
 
+
 /* Function to add a node at the beginning of Linked List */
 void push(Node ** head_ref, int new_data)
 {
-   
-
     Node * new_node = (Node *) malloc(sizeof(struct node));
     new_node->data  = new_data;
     new_node->next = (*head_ref); 
@@ -38,10 +37,12 @@ Node *merge(Node *left_head,Node *right_head){
     if(left_traverser->data < right_traverser->data){
         final=left_traverser;
         left_traverser=left_traverser->next;
+
     }
     else{
         final=right_traverser;
         right_traverser=right_traverser->next;
+
     }
 
     Node *final_traverser=final;
@@ -56,20 +57,24 @@ Node *merge(Node *left_head,Node *right_head){
         else{
             final_traverser->next=right_traverser;
             right_traverser=right_traverser->next;
+
         }
         final_traverser=final_traverser->next;
+
     }
 
     while(left_traverser!=NULL){
         final_traverser->next=left_traverser;
         left_traverser=left_traverser->next;
         final_traverser=final_traverser->next;
+
     }
 
     while(right_traverser!=NULL){
         final_traverser->next=right_traverser;
         right_traverser=right_traverser->next;
         final_traverser=final_traverser->next;
+
     }
 
     return final;
@@ -126,7 +131,6 @@ int main()
  
     printf("\nLinked list after calling  mergesort() \n");
     printList(start);
-    printf("\n");
  
     return 0;
 }
